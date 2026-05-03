@@ -10,7 +10,6 @@ function Home(){
                 {background:homeStyles.blob1Gradient}
              }
              >
-
             </div>
             <div
              className={homeStyles.blob2}

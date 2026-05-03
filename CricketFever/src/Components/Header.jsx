@@ -21,9 +21,9 @@ function Header({onSearch=()=>{}}){
     function handleSearch(e){
         e.preventDefault();
         onSearch(q.trim())
-    }
+    } 
     
-
+  klmm
 
 
 
@@ -73,6 +73,11 @@ function Header({onSearch=()=>{}}){
                             <button className={headerStyles.signupButton}>Sign Up</button>
 
                         </div>
+                    {/* Mobile View  */}
+                    <div className={headerStyles.mobileMenuButton}>
+                    </div>
+
+            
 
                     </div>
                 </div>
