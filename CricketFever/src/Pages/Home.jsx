@@ -1,6 +1,7 @@
 import React from "react";
 import { homeStyles } from "../assets/dummyStyles";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 function Home(){
     return (
         <div className={homeStyles.root}>
@@ -21,6 +22,10 @@ function Home(){
                 <Header onSearch={(q)=>console.log("search",q)}/>  
 
             </div>
+{/* 
+            <br />
+            <br />
+            <Footer/> */}
         </div>
     )
 }
