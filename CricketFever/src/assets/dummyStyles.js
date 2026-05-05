@@ -2,42 +2,43 @@
 
 export const headerStyles = {
   // Layout styles
-  container: "sticky top-6 z-50 px-4",
-  innerContainer: "max-w-6xl mx-auto",
-  mainWrapper: "backdrop-blur-md bg-white/60 border border-white/40 rounded-2xl p-3 flex items-center gap-4 shadow-sm",
+  container: "sticky top-4 z-50 px-4 transition-all duration-300",
+  innerContainer: "max-w-7xl mx-auto",
+  mainWrapper: "backdrop-blur-xl bg-white/70 border border-white/40 rounded-3xl p-3 flex items-center gap-6 shadow-[0_8px_32px_rgba(0,0,0,0.05)]",
   
   // Logo section
-  logoContainer: "flex items-center gap-3",
-  logoImage: "w-10 h-10 flex items-center justify-center overflow-hidden",
-  logoImg: "w-full h-full object-contain",
-  logoText: "hidden sm:block",
-  logoTitle: "text-slate-800 font-semibold text-2xl leading-none",
+  logoContainer: "flex items-center gap-3 group cursor-pointer",
+  logoImage: "w-11 h-11 flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-tr from-indigo-50 to-white shadow-inner transition-transform group-hover:scale-105",
+  logoImg: "w-full h-full object-contain p-1",
+  logoText: "hidden lg:block",
+  logoTitle: "text-slate-900 font-bold text-2xl tracking-tight leading-none group-hover:text-indigo-600 transition-colors",
   
   // Search section
   searchForm: "flex-1 flex items-center justify-center md:justify-start",
-  searchWrapper: "w-full max-w-xl",
-  searchInput: "w-full rounded-full border border-white/30 bg-white/40 py-2 pl-4 pr-10 text-sm placeholder:text-slate-400 focus:outline-none ring-2 ring-indigo-200",
-  searchButton: "absolute right-1 top-1/2 -translate-y-1/2 px-3 py-1 rounded-full bg-indigo-600 text-white text-sm",
+  searchWrapper: "w-full max-w-lg relative group",
+  searchInput: "w-full rounded-2xl border border-slate-200 bg-white/50 py-2.5 pl-5 pr-12 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 transition-all shadow-sm",
+  searchButton: "absolute right-1.5 top-1/2 -translate-y-1/2 px-4 py-1.5 rounded-xl bg-indigo-600 text-white text-xs font-semibold shadow-lg shadow-indigo-500/25 hover:bg-indigo-700 hover:shadow-indigo-500/40 active:scale-95 transition-all",
   
   // Navigation section
-  navContainer: "hidden md:flex items-center gap-3",
-  navButtons: "text-sm text-slate-600 hover:text-slate-900",
-  authContainer: "flex items-center gap-2",
-  loginButton: "px-3 py-1 rounded-full text-sm bg-white border border-white/40",
-  signupButton: "px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-sm shadow-md",
+  navContainer: "hidden xl:flex items-center gap-5",
+  navButtons: "text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-indigo-600 after:transition-all hover:after:w-full",
+  authContainer: "flex items-center gap-3",
+  loginButton: "px-5 py-2.5 rounded-2xl text-sm font-semibold text-slate-700 bg-white/50 hover:bg-white hover:text-indigo-600 border border-slate-200 transition-all",
+  signupButton: "px-6 py-2.5 rounded-2xl bg-slate-900 text-white text-sm font-semibold shadow-lg shadow-slate-900/10 hover:bg-indigo-600 hover:shadow-indigo-500/25 active:scale-95 transition-all",
   
   // Mobile menu
-  mobileMenuButton: "md:hidden ml-auto",
-  menuToggleButton: "p-2 rounded-md bg-white/60 border border-white/30",
-  menuIcon: "w-5 h-5 text-slate-700",
-  mobileMenu: "mt-2 p-3 bg-white/90 rounded-lg shadow-lg absolute right-4 top-20 w-[90%] max-w-xs",
-  mobileNav: "flex flex-col gap-2",
-  mobileNavButton: "text-sm text-slate-700 text-left w-full",
-  mobileAuthContainer: "mt-3 flex gap-2",
-  mobileAuthButton: "flex-1 px-3 py-2 rounded-full",
-  mobileLogin: "bg-white border",
-  mobileSignup: "bg-indigo-600 text-white"
+  mobileMenuButton: "xl:hidden ml-auto",
+  menuToggleButton: "p-2.5 rounded-2xl bg-white/80 border border-slate-200 text-slate-700 hover:text-indigo-600 hover:bg-white transition-all shadow-sm",
+  menuIcon: "w-6 h-6",
+  mobileMenu: "mt-4 p-5 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-slate-100 absolute right-4 top-20 w-[calc(100%-32px)] max-w-xs animate-in fade-in slide-in-from-top-4 duration-300",
+  mobileNav: "flex flex-col gap-3",
+  mobileNavButton: "text-sm font-medium text-slate-700 text-left w-full px-4 py-3 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-all",
+  mobileAuthContainer: "mt-5 flex flex-col gap-3",
+  mobileAuthButton: "w-full px-5 py-3 rounded-xl font-semibold text-sm transition-all",
+  mobileLogin: "bg-slate-50 text-slate-700 border border-slate-200 hover:bg-slate-100",
+  mobileSignup: "bg-indigo-600 text-white shadow-lg shadow-indigo-500/20 hover:bg-indigo-700"
 };
+
 
 export const liveMatchStyles = {
   // Main container
@@ -493,100 +494,101 @@ export const upcomingMatchesStyles = {
 
 export const homeStyles = {
   // Root layout
-  root: "min-h-screen relative bg-gradient-to-b from-white via-slate-50 to-slate-100 text-slate-800 overflow-x-hidden font-sans",
+  root: "min-h-screen relative bg-[#f8fafc] text-slate-900 overflow-x-hidden font-sans",
   
   // Decorative elements
-  blob1: "pointer-events-none absolute -top-36 -left-36 w-[520px] h-[520px] rounded-full opacity-80 blur-3xl",
-  blob1Gradient: "radial-gradient(circle at 30% 30%, rgba(255,219,205,0.9), rgba(255,245,238,0.6) 90%, transparent 90%)",
-  blob2: "pointer-events-none absolute -top-20 right-[-120px] w-[520px] h-[520px] rounded-full opacity-70 blur-3xl",
-  blob2Gradient: "radial-gradient(circle at 70% 20%, rgba(222,255,226,0.9), rgba(240,255,245,0.6) 100%, transparent 100%)",
+  blob1: "pointer-events-none absolute -top-48 -left-48 w-[640px] h-[640px] rounded-full opacity-40 blur-[100px] animate-pulse-soft",
+  blob1Gradient: "radial-gradient(circle at 50% 50%, #818cf8, #c084fc, transparent 70%)",
+  blob2: "pointer-events-none absolute top-1/2 right-[-240px] w-[720px] h-[720px] rounded-full opacity-30 blur-[120px] animate-pulse-soft",
+  blob2Gradient: "radial-gradient(circle at 50% 50%, #22d3ee, #818cf8, transparent 70%)",
   
   // Header positioning
-  headerContainer: "fixed inset-x-0 top-7 z-50",
+  headerContainer: "fixed inset-x-0 top-6 z-50",
   
   // Main content
-  main: "max-w-6xl mx-auto px-6 pt-20 md:pt-24",
-  section: "mb-16",
+  main: "max-w-7xl mx-auto px-6 pt-28 md:pt-36 pb-20",
+  section: "mb-20 fade-in-up",
   
   // Hero section
-  heroWrapper: "relative",
-  heroBox: "relative mt-5 overflow-visible rounded-3xl px-6 md:px-10 lg:px-12 py-16 md:py-10 bg-gradient-to-r from-indigo-600 via-blue-600 to-sky-500 shadow-xl",
-  heroSpotlight: "absolute inset-0 pointer-events-none",
-  heroSpotlightGradient: "radial-gradient(circle at 30% 40%, rgba(255,255,255,0.08), rgba(255,255,255,0.02) 20%, transparent 40%)",
-  heroContent: "relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-center",
+  heroWrapper: "relative group",
+  heroBox: "relative overflow-hidden rounded-[2.5rem] px-8 md:px-14 py-16 md:py-20 bg-slate-900 shadow-2xl shadow-indigo-500/10",
+  heroSpotlight: "absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-500",
+  heroSpotlightGradient: "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.4), transparent 50%)",
+  heroContent: "relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center",
   
   // Hero text
-  heroText: "text-center md:text-left",
-  heroTitle: "text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight drop-shadow-sm",
-  heroSubtitle: "mt-4 text-white/90 text-sm md:text-base max-w-2xl",
+  heroText: "text-left",
+  heroTitle: "text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight",
+  heroSubtitle: "mt-6 text-slate-400 text-base md:text-lg max-w-lg leading-relaxed",
   
   // Hero buttons
-  heroButtons: "mt-6 flex flex-wrap gap-3 justify-center md:justify-start",
-  primaryButton: "px-5 py-3 rounded-full bg-white text-indigo-700 font-medium shadow hover:scale-[1.01] transform transition",
-  secondaryButton: "px-5 py-3 rounded-full bg-white/10 border border-white/25 text-white text-sm hover:bg-white/20 transition",
+  heroButtons: "mt-10 flex flex-wrap gap-4",
+  primaryButton: "px-8 py-4 rounded-2xl bg-indigo-600 text-white font-bold shadow-xl shadow-indigo-600/25 hover:bg-indigo-700 hover:-translate-y-0.5 active:translate-y-0 transition-all",
+  secondaryButton: "px-8 py-4 rounded-2xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all",
   
   // Hero features
-  heroFeatures: "mt-6 hidden md:flex gap-4 text-sm text-white/90",
-  featureTag: "bg-white/10 px-3 py-2 rounded-lg",
+  heroFeatures: "mt-12 flex flex-wrap gap-6 text-sm text-slate-500 font-medium",
+  featureTag: "flex items-center gap-2 before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-indigo-500",
   
   // Hero shadow
-  heroShadow: "absolute inset-0 rounded-3xl pointer-events-none",
+  heroShadow: "absolute -inset-4 bg-indigo-500/5 blur-3xl -z-10 rounded-full group-hover:bg-indigo-500/10 transition-all duration-700",
   
   // Layout sections
-  gridSection: "grid grid-cols-1 lg:grid-cols-3 gap-6",
-  mainContent: "lg:col-span-2 space-y-6",
-  sidebar: "hidden lg:block lg:col-span-1",
-  sidebarSticky: "sticky top-20 space-y-6",
+  gridSection: "grid grid-cols-1 lg:grid-cols-12 gap-10",
+  mainContent: "lg:col-span-8 space-y-10",
+  sidebar: "lg:col-span-4",
+  sidebarSticky: "sticky top-28 space-y-8",
   
   // Section headers
-  sectionHeader: "flex items-center justify-between mb-3",
-  sectionTitle: "text-lg font-medium text-slate-800",
-  sectionSubtitle: "text-xs text-slate-500",
+  sectionHeader: "flex items-end justify-between mb-8",
+  sectionTitle: "text-2xl font-bold text-slate-900 tracking-tight",
+  sectionSubtitle: "text-sm text-slate-500 font-medium",
   
   // Live matches section
-  liveStatus: "flex items-center gap-2",
-  liveCount: "text-xs text-slate-500",
+  liveStatus: "flex items-center gap-3 bg-white px-4 py-2 rounded-2xl border border-slate-100 shadow-sm",
+  liveCount: "text-sm font-bold text-indigo-600",
   
   // Quick score sidebar
-  quickScoreCard: "rounded-2xl border border-white/30 bg-white p-4",
-  quickScoreHeader: "flex items-center justify-between mb-3",
-  quickScoreTitle: "text-sm font-medium text-cyan-800",
-  quickScoreStatus: "text-xs text-cyan-500",
-  quickScoreContent: "text-sm text-slate-600 mb-3",
-  quickScoreButton: "px-3 py-2 rounded-full bg-slate-100 text-sm",
+  quickScoreCard: "rounded-3xl border border-slate-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow",
+  quickScoreHeader: "flex items-center justify-between mb-4",
+  quickScoreTitle: "text-sm font-bold text-slate-900 uppercase tracking-wider",
+  quickScoreStatus: "flex items-center gap-2 text-xs font-bold text-rose-500 uppercase",
+  quickScoreContent: "text-base font-medium text-slate-700 mb-6",
+  quickScoreButton: "w-full py-3 rounded-xl bg-slate-50 text-slate-900 font-bold text-sm hover:bg-slate-100 transition-colors",
   
   // Details section
-  detailsSection: "mt-10",
-  detailsCard: "rounded-2xl border border-white/30 bg-white p-6",
-  detailsTitle: "text-lg font-semibold text-slate-800 mb-4",
-  detailsContent: "space-y-6",
+  detailsSection: "mt-12",
+  detailsCard: "rounded-3xl border border-slate-100 bg-white p-8 shadow-sm",
+  detailsTitle: "text-xl font-bold text-slate-900 mb-6",
+  detailsContent: "space-y-8",
   
   // Team section
-  teamSection: "mt-8",
-  teamCard: "rounded-2xl border border-white/30 bg-white p-6",
-  teamTitle: "text-lg font-semibold text-slate-800 mb-2"
+  teamSection: "mt-10",
+  teamCard: "rounded-3xl border border-slate-100 bg-white p-8 shadow-sm",
+  teamTitle: "text-xl font-bold text-slate-900 mb-4"
 };
+
 
 
 export const footerStyles = {
   // Main container
-  container: "mt-12 mb-4 px-4",
-  innerContainer: "max-w-6xl mx-auto",
+  container: "mt-24 mb-10 px-6",
+  innerContainer: "max-w-7xl mx-auto",
   
   // Content section
-  content: "backdrop-blur-md bg-white/60 border border-white/30 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4",
+  content: "backdrop-blur-2xl bg-white/50 border border-slate-100 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm",
   
   // Logo and copyright section
-  logoContainer: "flex items-center gap-3",
-  copyright: "text-center text-xs text-slate-500 mt-3",
+  logoContainer: "flex flex-col items-center md:items-start gap-2",
+  copyright: "text-sm font-medium text-slate-400",
   
   // Navigation and social section
-  navContainer: "flex items-center gap-6",
-  nav: "hidden sm:flex items-center gap-4 text-sm text-slate-700",
-  navLink: "hover:underline",
+  navContainer: "flex flex-col md:flex-row items-center gap-8 md:gap-12",
+  nav: "flex items-center gap-6 text-sm font-semibold text-slate-600",
+  navLink: "hover:text-indigo-600 transition-colors",
   
   // Social icons
-  socialContainer: "flex items-center gap-3",
-  socialLink: "p-2 rounded-md hover:bg-slate-100",
-  socialIcon: "w-4 h-4 text-slate-700"
-};
+  socialContainer: "flex items-center gap-4",
+  socialLink: "w-10 h-10 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-slate-600 hover:text-indigo-600 hover:border-indigo-100 hover:shadow-lg hover:shadow-indigo-500/5 transition-all",
+  socialIcon: "w-5 h-5"
+};

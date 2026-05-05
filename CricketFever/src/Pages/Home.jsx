@@ -2,7 +2,39 @@ import React from "react";
 import { homeStyles } from "../assets/dummyStyles";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import bat from "../assets/bat.png"
+import ball from "../assets/ball.png"
+import Loader from "../Components/Loader";
+import LiveMatch from "../Components/LiveMatvch";
+
+import { useState,useRef } from "react";
 function Home(){
+
+
+    const [selectedMatch, setSelectedMatch] = useState(null);
+    const [teamIdInput, setTeamIdInput] = useState('');
+    const [teamId, setTeamId] = useState(null);
+    const [loadingInitial, setLoadingInitial] = useState(true);
+    const [liveList, setLiveList] = useState([]);
+    const [liveError, setLiveError] = useState(null);
+    const stylesInjected = useRef(false);
+
+  // perspective parent for translateZ
+    const heroWrapperStyle = {
+        perspective: '1100px',
+        WebkitPerspective: '1100px',
+    };
+
+    const heroBoxStyle = {
+        transformStyle: 'preserve-3d',
+        WebkitTransformStyle: 'preserve-3d',
+    };
+
+
+
+
+
+
     return (
         <div className={homeStyles.root}>
             <div
@@ -22,6 +54,88 @@ function Home(){
                 <Header onSearch={(q)=>console.log("search",q)}/>  
 
             </div>
+
+            <main className={homeStyles.main}>
+                <section className={homeStyles.section}>
+                    <div className={homeStyles.heroWrapper} style={heroWrapperStyle}>
+                        <div className={homeStyles.heroBox} style={heroBoxStyle}>
+                            <div className={homeStyles.heroSpotlight} style={{background:homeStyles.heroSpotlightGradient}}>
+                            </div>
+                            <div className={homeStyles.heroContent}>
+                                <div className={homeStyles.heroText}> 
+                                    <h1 className={homeStyles.heroTitle} 
+                                     style={{fontFamily:"'Popins', system-ui,-apple-system,Roboto,'Helvetica Neue,Arial"}}>
+                                        Follow every match <br /> Real-Time Scores,Classy insights
+                                    </h1>
+                                    <p className={homeStyles.heroSubtitle}>
+                                        Live ScoreCards,upcoming fixture and match analytics -
+                                        Fast Live score schefule tracking and compact analytics
+                                    </p>
+
+                                    <div className={homeStyles.heroButtons}>
+                                        <button onClick={()=>document.getElementById("live")?.scrollIntoView({behavior:"smooth"})} className={homeStyles.primaryButton}>
+                                            View Live Matches
+                                        </button>
+
+                                        <button onClick={()=>document.getElementById("match-detail")?.scrollIntoView({behavior:"smooth"})} className={homeStyles.secondaryButton}>
+                                            Quick Details
+                                        </button>
+                                    </div>
+                                    <div className={homeStyles.heroFeatures}>
+                                        <div className={homeStyles.featureTag}>Live Scorecards</div>
+                                        <div className={homeStyles.featureTag}>Match Details</div>
+                                        <div className={homeStyles.featureTag}>Team Stats</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                {/* subtle outer border/shadow */}
+                        <div 
+                          className={homeStyles.heroShadow}
+                          style={{ boxShadow: '0 8px 30px rgba(14, 30, 50, 0.06)', borderRadius: '24px' }} />
+                          <img src={bat} alt="bat" className={"hero-bat"} />
+                          <img src={ball} alt="ball" className={"hero-ball"} />
+                        </div>
+
+                </section>
+                <section className={homeStyles.gridSection}>
+                    <div className={homeStyles.mainContent}>
+                        <div className={homeStyles.liveStatus}>
+                            <div className={homeStyles.liveCount}>
+                                {loadingInitial ? "Loading...":`${liveList.length} matches`}
+                            </div>
+                        </div>
+                    </div>
+                    {loadingInitial ? (
+                        <Loader message="Loading Live Matches" centered/>
+                    ):liveError ? (
+                        <div className="Text-sm text-rose-600">
+                            {liveError}
+                        </div>
+                    ):(
+                        <LiveMatch
+                         matches={liveList}
+                         onSelect={(id)=>onselectionchange(id) }
+                         selectedMatch={selectedMatch}/>
+
+                    )}
+
+
+                </section>
+            </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
 {/* 
             <br />
             <br />
